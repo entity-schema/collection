@@ -1,7 +1,7 @@
 {
   "name": "@entity-schema/collection",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.1.1",
+  "description": "Utils for working with collections of Entity Schema",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -26,12 +26,8 @@
   },
   "homepage": "https://github.com/entity-schema/collection#readme",
   "dependencies": {
-    "@entity-schema/predicates": "^0.1.2",
+    "@entity-schema/predicates": "^0.1.1",
     "@mojule/is": "^0.3.9",
     "@mojule/mapper": "^0.1.1"
-  },
-  "devDependencies": {
-    "@types/mocha": "^5.2.5",
-    "@types/node": "^10.12.9"
   }
 }

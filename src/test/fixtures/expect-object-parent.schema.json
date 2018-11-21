@@ -1,0 +1,37 @@
+{
+  "id": "http://workingspec.com/schema/object-parent-in",
+  "title": "Object Parent",
+  "description": "An object schema with some nested RefSchema",
+  "type": "object",
+  "properties": {
+    "child": {
+      "id": "http://workingspec.com/schema/object-child-in",
+      "title": "Object Child",
+      "description": "An object schema with a nested RefSchema",
+      "type": "object",
+      "properties": {
+        "property": {
+          "id": "http://workingspec.com/schema/property-in",
+          "title": "Property",
+          "description": "An property that will be referred to via $ref",
+          "type": "string"
+        }
+      },
+      "required": [
+        "property"
+      ],
+      "additionalProperties": false
+    },
+    "property": {
+      "id": "http://workingspec.com/schema/property-in",
+      "title": "Property",
+      "description": "An property that will be referred to via $ref",
+      "type": "string"
+    }
+  },
+  "required": [
+    "child",
+    "property"
+  ],
+  "additionalProperties": false
+}

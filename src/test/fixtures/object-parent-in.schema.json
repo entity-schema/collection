@@ -1,0 +1,16 @@
+{
+  "id": "http://workingspec.com/schema/object-parent-in",
+  "title": "Object Parent",
+  "description": "An object schema with some nested RefSchema",
+  "type": "object",
+  "properties": {
+    "child": {
+      "$ref": "http://workingspec.com/schema/object-child-in"
+    },
+    "property": {
+      "$ref": "http://workingspec.com/schema/property-in"
+    }
+  },
+  "required": [ "child", "property" ],
+  "additionalProperties": false
+}

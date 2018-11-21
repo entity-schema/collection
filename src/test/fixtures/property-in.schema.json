@@ -1,0 +1,6 @@
+{
+  "id": "http://workingspec.com/schema/property-in",
+  "title": "Property",
+  "description": "An property that will be referred to via $ref",
+  "type": "string"
+}

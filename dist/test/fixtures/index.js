@@ -5,12 +5,18 @@ const objectParentInJson = require("./object-parent-in.schema.json");
 const objectChildInJson = require("./object-child-in.schema.json");
 const propertyInJson = require("./property-in.schema.json");
 const expectObjectParentJson = require("./expect-object-parent.schema.json");
+const circularAJson = require("./circular-a.schema.json");
+const circularBJson = require("./circular-b.schema.json");
 predicates_1.assertObjectSchema(objectParentInJson);
 predicates_1.assertObjectSchema(objectChildInJson);
 predicates_1.assertStringSchema(propertyInJson);
 predicates_1.assertObjectSchema(expectObjectParentJson);
+predicates_1.assertObjectSchema(circularAJson);
+predicates_1.assertObjectSchema(circularBJson);
 exports.objectParentInSchema = objectParentInJson;
 exports.objectChildInSchema = objectChildInJson;
 exports.propertyInSchema = propertyInJson;
 exports.expectObjectParentSchema = expectObjectParentJson;
+exports.circularASchema = circularAJson;
+exports.circularBSchema = circularBJson;
 //# sourceMappingURL=index.js.map

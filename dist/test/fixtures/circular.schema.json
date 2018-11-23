@@ -1,0 +1,13 @@
+{
+    "id": "http://workingspec.com/schema/circular",
+    "title": "Circular",
+    "description": "An object schema that references itself",
+    "type": "object",
+    "properties": {
+        "property": {
+            "$ref": "http://workingspec.com/schema/circular"
+        }
+    },
+    "required": ["property"],
+    "additionalProperties": false
+}

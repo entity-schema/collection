@@ -1,0 +1,13 @@
+{
+  "id": "http://workingspec.com/schema/circular-b",
+  "title": "Circular B",
+  "description": "An object schema with a circular $ref",
+  "type": "object",
+  "properties": {
+    "property": {
+      "$ref": "http://workingspec.com/schema/circular-a"
+    }
+  },
+  "required": [ "property" ],
+  "additionalProperties": false
+}

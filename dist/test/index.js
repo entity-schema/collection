@@ -6,6 +6,7 @@ const fixtures_1 = require("./fixtures");
 const rootSchemas = [
     fixtures_1.objectParentInSchema, fixtures_1.objectChildInSchema, fixtures_1.propertyInSchema
 ];
+const circularSchemas = [fixtures_1.circularASchema, fixtures_1.circularBSchema];
 describe('collection', () => {
     describe('RootSchemaMap', () => {
         it('createRootSchemaMap', () => {
@@ -72,6 +73,13 @@ describe('collection', () => {
             const rootSchemaMap = __1.createRootSchemaMap(rootSchemas);
             const parentOutSchema = __1.resolveRefSchemas('http://workingspec.com/schema/object-parent-in', rootSchemaMap);
             assert.deepEqual(parentOutSchema, fixtures_1.expectObjectParentSchema);
+        });
+        it('does not allow circular references', () => {
+            const rootSchemaMap = __1.createRootSchemaMap(circularSchemas);
+            assert.throws(() => __1.resolveRefSchemas(fixtures_1.circularASchema.id, rootSchemaMap), {
+                name: 'Error',
+                message: `Circular reference: ${fixtures_1.circularASchema.id}`
+            });
         });
     });
 });

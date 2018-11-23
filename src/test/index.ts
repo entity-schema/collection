@@ -7,12 +7,14 @@ import {
 
 import {
   objectParentInSchema, objectChildInSchema, propertyInSchema,
-  expectObjectParentSchema
+  expectObjectParentSchema, circularASchema, circularBSchema
 } from './fixtures'
 
 const rootSchemas: RootSchema[] = [
   objectParentInSchema, objectChildInSchema, propertyInSchema
 ]
+
+const circularSchemas: RootSchema[] = [ circularASchema, circularBSchema ]
 
 describe( 'collection', () => {
   describe( 'RootSchemaMap', () => {
@@ -125,6 +127,18 @@ describe( 'collection', () => {
       )
 
       assert.deepEqual( parentOutSchema, expectObjectParentSchema )
+    })
+
+    it( 'does not allow circular references', () => {
+      const rootSchemaMap = createRootSchemaMap( circularSchemas )
+
+      assert.throws(
+        () => resolveRefSchemas( circularASchema.id, rootSchemaMap ),
+        {
+          name: 'Error',
+          message: `Circular reference: ${ circularASchema.id }`
+        }
+      )
     })
   })
 })
